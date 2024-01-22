@@ -11,6 +11,8 @@ APlayerKnight::APlayerKnight()
 	PrimaryActorTick.bCanEverTick = true;
 	
 	bUseControllerRotationYaw = false;
+
+	skeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMesh"));
 }
 
 // Called when the game starts or when spawned
@@ -47,6 +49,8 @@ void APlayerKnight::Tick(float DeltaTime)
 void APlayerKnight::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PlayerInputComponent->BindAction(TEXT("MeleeAttack"), IE_Pressed, this, &APlayerKnight::MeleeAttack);
 
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &APlayerKnight::MoveForward);
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &APlayerKnight::MoveRight);

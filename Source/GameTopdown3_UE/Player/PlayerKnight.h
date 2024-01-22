@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/SkeletalMeshComponent.h"
 
 #include "PlayerKnight.generated.h"
 
@@ -13,11 +14,15 @@ class GAMETOPDOWN3_UE_API APlayerKnight : public ACharacter
 	GENERATED_BODY()
 
 private:
-
+	// COMPONENTS
+	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	USkeletalMeshComponent* skeletalMesh;
 
 public:
 	// Sets default values for this character's properties
 	APlayerKnight();
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void MeleeAttack(){}
 
 protected:
 	// Called when the game starts or when spawned

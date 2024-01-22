@@ -14,4 +14,6 @@ class GAMETOPDOWN3_UE_API AGameTopdown3_UEGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+	// test commit github
 };

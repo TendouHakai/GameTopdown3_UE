@@ -43,7 +43,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
 	bool IsAnimMovable();
 
-	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsAnimAttackState();
 
 	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")

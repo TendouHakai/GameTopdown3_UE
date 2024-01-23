@@ -3,6 +3,7 @@
 
 #include "PlayerKnight.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Components/CapsuleComponent.h"
  
 // Sets default values
 APlayerKnight::APlayerKnight()
@@ -13,6 +14,7 @@ APlayerKnight::APlayerKnight()
 	bUseControllerRotationYaw = false;
 
 	skeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMesh"));
+	skeletalMesh->SetupAttachment(GetCapsuleComponent());
 }
 
 // Called when the game starts or when spawned
@@ -49,8 +51,6 @@ void APlayerKnight::Tick(float DeltaTime)
 void APlayerKnight::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	PlayerInputComponent->BindAction(TEXT("MeleeAttack"), IE_Pressed, this, &APlayerKnight::MeleeAttack);
 
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &APlayerKnight::MoveForward);
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &APlayerKnight::MoveRight);

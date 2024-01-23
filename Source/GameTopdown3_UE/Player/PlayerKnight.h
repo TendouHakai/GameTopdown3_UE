@@ -15,7 +15,7 @@ class GAMETOPDOWN3_UE_API APlayerKnight : public ACharacter
 
 private:
 	// COMPONENTS
-	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* skeletalMesh;
 
 public:

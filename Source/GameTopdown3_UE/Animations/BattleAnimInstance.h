@@ -34,6 +34,15 @@ enum class EChrAnimState : uint8
 	Victory					UMETA(DisplayName = "Victory"),
 };
 
+UENUM(BlueprintType)
+enum class EComboState : uint8 
+{
+	ComboUnable				UMETA(DisplayName = "ComboUnable"),
+	ComboAvailable			UMETA(DisplayName = "ComboAvailable"),
+	ComboReseved			UMETA(DisplayName = "ComboReseved"),
+	ComboConnectable		UMETA(DisplayName = "ComboConnectable"),
+};
+
 UCLASS()
 class GAMETOPDOWN3_UE_API UBattleAnimInstance : public UAnimInstance
 {
@@ -43,7 +52,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
 	bool IsAnimMovable();
 
-	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
 	bool IsAnimAttackState();
 
 	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
@@ -52,7 +61,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
 	bool IsAnimHitState();
 
-	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsStateAvailableToCombo();
 
 	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")

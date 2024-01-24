@@ -5,12 +5,12 @@
 
 bool UBattleAnimInstance::IsAnimMovable()
 {
-    return false;
+    return (AnimState==EChrAnimState::IDLE || AnimState == EChrAnimState::WalkRun);
 }
 
 bool UBattleAnimInstance::IsAnimAttackState()
 {
-    return (static_cast<uint8>(AnimState) >= static_cast<uint8>(EChrAnimState::Attack1)) && (static_cast<uint8>(AnimState) <= static_cast<uint8>(EChrAnimState::Attack6));
+    return (AnimState >= EChrAnimState::Attack1 && AnimState <= EChrAnimState::Attack6);
 }
 
 bool UBattleAnimInstance::IsAnimSkillState()
@@ -25,7 +25,7 @@ bool UBattleAnimInstance::IsAnimHitState()
 
 bool UBattleAnimInstance::IsStateAvailableToCombo()
 {
-    return false;
+    return (IsAnimMovable() || IsAnimAttackState());
 }
 
 bool UBattleAnimInstance::IsAnimRangeAtkState()

@@ -38,6 +38,11 @@ bool UBattleAnimInstance::IsDizzy()
     return false;
 }
 
+bool UBattleAnimInstance::IsAnimRollState()
+{
+    return AnimState == EChrAnimState::Roll;
+}
+
 void UBattleAnimInstance::PrintAnimStateLog(FString LogStr, EChrAnimState LogAnimState)
 {
 }

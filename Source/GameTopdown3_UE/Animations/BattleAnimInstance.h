@@ -49,26 +49,29 @@ class GAMETOPDOWN3_UE_API UBattleAnimInstance : public UAnimInstance
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsAnimMovable();
 
 	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsAnimAttackState();
 
-	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsAnimSkillState();
 
-	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsAnimHitState();
 
 	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsStateAvailableToCombo();
 
-	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsAnimRangeAtkState();
 
-	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance")
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
 	bool IsDizzy();
+
+	UFUNCTION(BlueprintPure, Category = "BattleAnimInstance", meta = (BlueprintThreadSafe))
+	bool IsAnimRollState();
 
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "BattleAnimInstance")

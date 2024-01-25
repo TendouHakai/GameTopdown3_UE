@@ -28,7 +28,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	UFUNCTION(BlueprintCallable, Category = "Input")
 	void MoveForward(float value);
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
 	void MoveRight(float value);
 
 public:	

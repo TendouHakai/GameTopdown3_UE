@@ -28,6 +28,11 @@ void APlayerKnight::MoveForward(float value)
 {
 	if (value != 0) {
 		FVector forwardV = FVector(0, -1, 0);
+		//if (value > 0) {
+		//	SetActorRotation(FRotator(0, -90, 0));
+		//}
+		//else SetActorRotation(FRotator(0, 90, 0));
+		
 		AddMovementInput(value* forwardV);
 	}
 }
@@ -36,6 +41,10 @@ void APlayerKnight::MoveRight(float value)
 {
 	if (value != 0) {
 		FVector rightV = FVector(1, 0, 0);
+		//if (value > 0) {
+		//	SetActorRotation(FRotator(0, 0, 0));
+		//}
+		//else SetActorRotation(FRotator(0, 180, 0));
 		AddMovementInput(value * rightV);
 	}
 }
@@ -52,7 +61,7 @@ void APlayerKnight::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &APlayerKnight::MoveForward);
-	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &APlayerKnight::MoveRight);
+	//PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &APlayerKnight::MoveForward);
+	//PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &APlayerKnight::MoveRight);
 }
 

@@ -15,14 +15,10 @@ class GAMETOPDOWN3_UE_API APlayerKnight : public ACharacter
 
 private:
 	// COMPONENTS
-	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, Category = "Mesh", meta = (AllowPrivateAccess = "true"))
-	USkeletalMeshComponent* skeletalMesh;
 
 public:
 	// Sets default values for this character's properties
 	APlayerKnight();
-	UFUNCTION(BlueprintCallable, Category = "Input")
-	void MeleeAttack(){}
 
 protected:
 	// Called when the game starts or when spawned
@@ -33,6 +29,12 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	void MoveRight(float value);
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void MeleeAttack() {}
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Player")
+	bool IsMovable();
 
 public:	
 	// Called every frame

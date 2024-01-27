@@ -20,7 +20,7 @@ bool UBattleAnimInstance::IsAnimSkillState()
 
 bool UBattleAnimInstance::IsAnimHitState()
 {
-    return (AnimState >= EChrAnimState::Hit1 && AnimState <= EChrAnimState::Hit3);
+    return false;
 }
 
 bool UBattleAnimInstance::IsStateAvailableToCombo()
